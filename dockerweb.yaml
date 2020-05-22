@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+          - name: web cnt
+            docker_container:
+                    name: apache
+                    image: httpd
+                    exposed_ports: 
+                      - 80
+                    ports: 
+                      - "800:80"
