@@ -1,0 +1,11 @@
+---
+# tasks file for wpdownload
+- name: download wp
+  get_url: 
+    url: "{{ wp_url }}"
+    dest: /tmp/
+  register: file_name
+- name: untar to /var/www/html
+  unarchive:
+          src: "{{ file_name.dest }}"
+          dest: /var/www/html/

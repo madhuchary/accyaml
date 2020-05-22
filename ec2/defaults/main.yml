@@ -1,0 +1,6 @@
+---
+# defaults file for ec2
+amiid: 
+keyname:
+instnacetype: 
+region:

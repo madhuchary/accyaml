@@ -1,0 +1,15 @@
+---
+# tasks file for users
+- include_vars:
+     file: test.yaml
+- name: Creating user
+  user:
+          name: "{{ user }}"
+- name: copy welcome file in user directory
+  copy:
+          src: welcome.txt
+          dest: "/home/{{ user }}/welcome.txt"
+- name: copy welcome file in user directory
+  template:
+          src: welcome.txt.j2
+          dest: "/home/{{ user }}/template.txt"

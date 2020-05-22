@@ -1,0 +1,11 @@
+---
+# tasks file for wpconfig
+- name: adding wp-config
+  template: 
+     src: wp-config.php.j2
+     dest: /var/www/html/wordpress/wp-config.php 
+  notify: restart apache
+- name: ensure apache is running
+  service:
+          name: apache2
+          state: started

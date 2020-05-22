@@ -1,0 +1,14 @@
+---
+# tasks file for wpdb
+- name: create db
+  mysql_db:
+          name: "{{ dbname }}"
+          login_user: root
+          login_password: 12345678
+          state: present
+- name: create db user
+  mysql_user:
+          name: "{{ dbuser }}"
+          host: "{{ dbhost }}"
+          priv: "{{ dbname }}.*:ALL"
+          password: "{{ dbpass }}"

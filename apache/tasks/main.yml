@@ -1,0 +1,19 @@
+---
+# tasks file for apache
+- name: include vars
+  include_vars: "{{ ansible_os_family }}.yaml"
+- name: installing apache
+  package: 
+   name: "{{ package }}"
+   state: latest
+- name: starting apache
+  service:
+   name: "{{ package }}"
+   state: started
+
+- name: copy index.html
+  template:
+          src: index.html.j2
+          dest: /var/www/html/index.html
+  notify: restart apache
+

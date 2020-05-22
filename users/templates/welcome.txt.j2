@@ -1,0 +1,4 @@
+Welcome {{ user }} to Ansible class and you are using {{ ansible_distribution }}
+hostip={{ ansible_default_ipv4.address }}
+hostipv6={{ ansible_all_ipv6_addresses[0] }}
+allow={{ ansible_default_ipv4.network }}

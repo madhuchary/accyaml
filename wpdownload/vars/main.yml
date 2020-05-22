@@ -1,0 +1,3 @@
+---
+# vars file for wpdownload
+wp_url: https://wordpress.org/latest.tar.gz

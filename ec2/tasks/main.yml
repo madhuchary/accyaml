@@ -1,0 +1,8 @@
+---
+# tasks file for ec2
+- name: launching ec2 instance
+  ec2:
+          image_id: "{{ amiid }}"
+          key_name: "{{ keyname }}"
+          region: "{{ region }}"
+          instane_type: "{{ instancetype }}"

@@ -1,0 +1,9 @@
+---
+# tasks file for pkginstall
+- include_vars: "{{ ansible_os_family }}.yaml"
+- name: installing packages
+  package:
+          name: "{{ item }}"
+          state: latest
+  loop:
+          "{{ packages }}"

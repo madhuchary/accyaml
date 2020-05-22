@@ -1,0 +1,6 @@
+---
+# defaults file for wpdb
+dbname: wp
+dbuser: wp_user
+dbpass: WordPressP@ssword123
+dbhost: localhost
